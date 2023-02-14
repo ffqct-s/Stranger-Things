@@ -1,1 +1,39 @@
 # Stranger-Things
+# Welcome
+# Welcome to Sonic Pi
+use_bpm 65
+live_loop :heartbeat do
+  loop do
+    with_fx :lpf, cutoff: 90 do
+      with_fx :reverb do
+        sample :drum_bass_soft, amp: 2
+        cue :beat1
+        sleep 0.2
+        sample :drum_bass_soft, amp: 1
+        cue :beat2
+        sleep 0.56
+      end
+    end
+  end
+end
+use_bpm 84
+2.times do
+  sample :piano
+  play :c4
+  sleep 0.5
+  play :e4
+  sleep 0.5
+  play :g4
+  sleep 0.5
+  play :b4
+  sleep 0.5
+  play :c5
+  sleep 0.5
+  play :b4
+  sleep 0.5
+  play :g4
+  sleep 0.5
+  play :e4
+  sleep 0.5
+  
+end
