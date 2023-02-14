@@ -24,7 +24,7 @@ sample :drum_splash_hard, sustain: 3
 sample :drum_cymbal_hard
 sample :drum_cymbal_soft, amp: 1.5
 #But also play the snare, kick, and cymbal together
-
+sleep 2
 #LIVE LOOPS PLAY CONCURRENTLY
 live_loop :one do
   sample :drum_snare_soft, amp: 4
@@ -40,3 +40,4 @@ live_loop :three do
   sample :drum_cymbal_closed, amp: 4
   sleep 0.5
 end
+stop
