@@ -1,0 +1,68 @@
+use_synth :piano
+use_bpm 76
+hearthemnow = "C:/Users/arianna_serrano/Documents/Audacity/OKOOKOK.wav"
+theydontknow = "C:/Users/arianna_serrano/Documents/Audacity/theydontknow.wav"
+overtake = "C:/Users/arianna_serrano/Documents/Audacity/overtake.wav"
+toolate = "C:/Users/arianna_serrano/Documents/Audacity/toolate.wav"
+
+vocals = [hearthemnow, theydontknow, overtake, toolate]
+i=0
+define :main do
+  play :c3, sustain: 1
+  play :c4, sustain: 1
+  sleep 1
+  sleep 0.5
+  play :db4, sustain: 0.5
+  sleep 0.75
+  play :c4
+  sleep 0.25
+  play :bb3
+  sleep 0.5
+  play :ab3
+  sleep 0.5
+  play :bb3
+  sleep 0.5
+end
+define :blue do
+  play :c3, sustain: 1
+  play :c4, sustain: 1
+  sleep 1
+  play :eb4
+  sleep 0.5
+  play :db4, sustain: 0.5
+  sleep 0.75
+  play :c4
+  sleep 0.25
+  play :bb3
+  sleep 0.5
+  play :ab3
+  sleep 0.5
+  play :bb3
+  sleep 0.5
+end
+
+3.times do
+  main
+end
+blue
+
+live_loop :drum do
+  sample :drum_heavy_kick
+  sleep 0.5
+end
+
+live_loop :real do
+  3.times do
+    main
+  end
+  blue
+end
+sleep 16
+4.times do
+  sleep 1.5
+  sample vocals[i], amp: 2
+  sleep 2.5
+  i=i+1
+  sleep 4
+end
+
